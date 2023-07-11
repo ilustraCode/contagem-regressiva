@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+	<head>
+		<meta charset="utf-8"/>
+		<title>036 Parte 1 - Contagem regressiva com Javascript | ilustraCode</title>
+		<style>
+			#contReg div{
+				width: 30px;height: 30px;
+				margin: 2px;
+				
+				float: left;
+				text-align: center;
+				padding-top: 5px;
+				box-sizing: border-box;
+				
+				background-color: #200a3f;
+				color: #00ec85;
+				border-radius:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="contReg">
+			<div id="dias">0</div>
+			<div id="horas">0</div>
+			<div id="minutos">0</div>
+			<div id="segundos">0</div>
+		</div>
+		
+		<script>
+			var dataFutura = new Date("September 25, 2023 08:15").getTime();
+			var dias, horas, minutos, segundos;
+			 
+			setInterval(function(){
+				var segundos_f = (dataFutura - dataAtual) / 1000;
+			  	dias = parseInt(segundos_f / 86400);
+				segundos_f = segundos_f % 86400;
+				horas = parseInt(segundos_f / 3600);
+				segundos_f = segundos_f % 3600;
+    
+				minutos = parseInt(segundos_f / 60);
+				segundos = parseInt(segundos_f % 60);
+				document.getElementById('dias').innerHTML = dias;
+				document.getElementById('horas').innerHTML = horas;
+				document.getElementById('minutos').innerHTML = minutos;
+				document.getElementById('segundos').innerHTML = segundos;
+
+			}, 1000);
+  
+	  </script>
+	</body>
+</html>
